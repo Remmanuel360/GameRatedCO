@@ -1,0 +1,281 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #2b0a0a;
+  color: #f5f5f5;
+}
+
+header {
+  background-color: #400d0d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+}
+
+nav .btn {
+  background-color: #802020;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+  position: relative;
+  margin-top: 2%; 
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+/* Intro ocupa fila 1, columna 1 */
+.intro {
+  grid-column: 1 / 2;
+  grid-row: 1;
+  background-color: #4d1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 0;
+}
+
+/* Valoradas comienza en la fila 1, columna 1 también, 
+   pero se mueve abajo visualmente para quedar pegada a intro */
+.valoradas {
+  grid-column: 1 / 2;
+  grid-row: 2;  
+  background-color: #4d1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: calc(100% + 50px); /* se baja justo después de intro */
+  position: relative;
+  z-index: 1;
+}
+
+/* Ultimas ocupa fila 1 a 3, columna 2 (dos filas de alto) */
+.ultimas {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  background-color: #4d1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 0;
+}
+
+/* Buscar en la fila 3, columna 2 */
+.buscar {
+  grid-column: 2 / 3;
+  grid-row: 3;
+  background-color: #4d1a1a;
+  padding: 15px;
+  padding-left: 5%;
+  border-radius: 10px;
+  margin-top: 0;
+}
+.intro h1 {
+  font-size: 4.5em;
+  margin-bottom: 10px;
+}
+
+.intro button {
+  background-color: #802020;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ultimas, .valoradas, .buscar {
+  background-color: #4d1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.tarjetas {
+  display: flex;  
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tarjeta {
+  background-color: #330a0ac0;
+  padding: 10px;
+  border-radius: 10px;
+  flex: 1 1 45%;
+  text-align: center;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Centra el contenido horizontalmente */
+}
+
+.tarjeta .imagen {
+  width: 300px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  display: flex;              /* Nuevo */
+  justify-content: center;   /* Nuevo */
+  align-items: center;       /* Nuevo */
+  background-color:#330a0a;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+.imagenV img {
+  object-fit: contain;
+  width: 300px;
+}
+
+.valoradas .puntuacion {
+  background-color: green;
+  color: white;
+  width: 50px;  
+  height: 50px;
+  font-size: 1.4em; 
+  margin: 0 auto 5px auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buscar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.buscar li {
+  margin-bottom: 8px;
+}
+/* Lineas de codigo que hacen el zoom a las imagenes*/
+.imagen, .imagenV {
+  width: 300px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 10px;        /* Bordes curvos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #444;
+  color: #ccc;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;  /* Suaviza el efecto si haces hover en toda la caja */
+}
+
+.imagen img, .imagenV img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;  /* Animación suave */
+  border-radius: 10px;              /* Bordes curvos en la imagen también */
+}
+.plataformas {
+  background-color: #4d1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  grid-column: 1 / 2;
+}
+
+.plataformas h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.plataformas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plataformas li {
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.plataformas li:hover {
+  color: #8d1111;
+}
+.buscar li {
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.buscar li:hover {
+  color: #8d1111; /* Igual que los enlaces del footer al pasar el mouse */
+}
+
+.imagen:hover img, .imagenV:hover img {
+  transform: scale(1.1);            /* Aumenta un poco el tamaño */
+}
+.footer {
+  background-color: #1a0606;
+  color: #ccc;
+  padding: 20px 30px;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9em;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #8d1111;
+}
+/*Animacion de pulsacion del boton registrar*/
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.btn,
+#btn-intro {
+  animation: pulse 2s infinite;
+  transition: background-color 0.3s;
+}
+
+.btn:hover,
+#btn-intro:hover {
+  background-color: #a52a2a;
+}
